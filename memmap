@@ -1,6 +1,6 @@
 MEMORY
 {
-    ram(WAILRX)   : ORIGIN = 0x00000000, LENGTH = 0x800000
+    ram(WAILRX)   : ORIGIN = 0x60010000, LENGTH = 0x800000
 }
 SECTIONS
 {
@@ -16,6 +16,7 @@ SECTIONS
     _up_begin = .;
     .user_processes : { *(.user_processes) }
     _up_end = .;
+    .stack : { *(.stack) }
     _edata = .;
     .note.gnu.build-id : { *(.note.gnu.build-id*) }
 }
